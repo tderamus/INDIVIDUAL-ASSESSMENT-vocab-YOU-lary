@@ -1,8 +1,10 @@
-import loginButton from '../components/loginButton';
 import logoutButton from '../components/logoutButton';
+import domBuilder from '../components/domBuilder';
+import navBar from '../components/navBar';
 
 const startApp = () => {
-  loginButton();
+  domBuilder();
+  navBar();
   logoutButton();
 };
 
