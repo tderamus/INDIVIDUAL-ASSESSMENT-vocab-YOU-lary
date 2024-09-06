@@ -1,6 +1,6 @@
-const renderToDom = (divId, htmlString) => {
+const renderToDom = (divId, content) => {
   const targetDiv = document.querySelector(divId);
-  targetDiv.innerHTML = htmlString;
+  targetDiv.innerhtml = content;
 };
 
 export default renderToDom;
