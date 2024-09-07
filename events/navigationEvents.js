@@ -12,7 +12,7 @@ const navigationEvents = (uid) => {
   // ALL WORDS
   document.querySelector('#all-words').addEventListener('click', () => {
     console.warn('ALL WORDS BUTTON CLICKED', uid);
-    getWords(uid).then(showWords);
+    getWords('$(firebase.auth().currentUser.uid)').then(showWords);
   });
 };
 
