@@ -9,7 +9,7 @@ const noWordsOnDom = () => {
 const showWords = (array) => {
   clearDom();
   const btnString = '<button class="btn btn-success btn-lg mb-4" id="add-words-btn">Add VocabYOUlary Word</button>';
-  renderToDom('#word-button', btnString);
+  renderToDom('#main-container', btnString);
 
   let domString = '';
   array.forEach((item) => {
