@@ -8,10 +8,10 @@ import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';
 
 const startApp = (user) => {
-  domBuilder(user.uid); // ADD DOM BUILD ELEMENTS
+  domBuilder(user); // ADD DOM BUILD ELEMENTS
   navBar(); // ADD STANDARD NAV BAR TO THE DOM
   logoutButton(); // ADD LOGOUT BUTTON COMPONENT
-  navigationEvents(user.uid); // ADD EVENT LISTENERS FOR NAVIGATION BAR
+  navigationEvents(user); // ADD EVENT LISTENERS FOR NAVIGATION BAR
   domEvents(user);
   formEvents(user);
   // Get words on DOM at application login

@@ -5,7 +5,7 @@ const domBuilder = () => {
   <div id="nav-bar"></div>
   <div id="main-container"></div>
   <div id="word-button"></div>
-  <div id="store-container">STORE CONTAINER</div>
+  <div id="store-container"></div>
   <div id="view-container"></div>
   `;
   renderToDom('#app', htmlString);

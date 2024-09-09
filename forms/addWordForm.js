@@ -4,14 +4,14 @@ import renderToDOM from '../utils/renderToDom';
 const addWordForm = (obj = {}) => {
   clearDom();
   const domString = `
-  <form id="${obj.firebaseKey ? `update-word--${obj.firebaseKey}` : 'submit-word'}" class="mb-4">
+  <form id="${obj.firebaseKey ? `update-word--${obj.firebaseKey}` : 'submit-words'}" class="mb-4">
     <div class="mb-3">
-    <input type="text" class="form-control" id="word" placeholder="add word"></div>
+    <input type="text" class="form-control" id="word" placeholder="add word" value="${obj.word || ''}" required></div>
     <div class="mb-3">
-    <textarea class="form-control" id="definition" rows="3" placeholder="add definition"></textarea>
+    <input type="text" class="form-control" id="definition" rows="3" placeholder="add definition" value="${obj.definition || ''}"></input>
     </div>
     <div class="mb-3">
-    <input type="text" class="form-control" id="category" placeholder="add categoryy"></div>
+    <input type="text" class="form-control" id="category" placeholder="add category" value="${obj.category || ''}"></div>
     <button type="submit" class="btn btn-primary mt-3" id="submit-words">Submit Word</button>
   </form>`;
 
