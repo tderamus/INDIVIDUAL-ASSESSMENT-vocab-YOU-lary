@@ -78,6 +78,22 @@ const deletWords = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// FILTER NETWORK WORDS  /words.json?orderBy="category"&equalTo="network"
+const networkWords = (user) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/words.json?orderBy="uid"&equalTo="${user.uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const network = Object.values(data).filter((item) => item.network);
+      resolve(network);
+    })
+    .catch(reject);
+});
+
 export {
-  getWords, createWord, updateWord, getSingleWord, deletWords
+  getWords, createWord, updateWord, getSingleWord, deletWords, networkWords
 };
