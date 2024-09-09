@@ -10,6 +10,7 @@ const formEvents = (user) => {
         word: document.querySelector('#word').value,
         definition: document.querySelector('#definition').value,
         category: document.querySelector('#category').value,
+        network: document.querySelector('#network').checked,
         uid: user.uid,
       };
       createWord(payload).then(({ name }) => {
@@ -29,6 +30,7 @@ const formEvents = (user) => {
         word: document.querySelector('#word').value,
         definition: document.querySelector('#definition').value,
         category: document.querySelector('#category').value,
+        network: document.querySelector('#network').checked,
         firebaseKey,
       };
 

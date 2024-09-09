@@ -3,5 +3,6 @@
   "definition": "A network is a group of two or more computers or other electronic devices that are interconnected for the purpose of exchanging data and sharing resources.",
   "category": "network",
   "firebaseKey": "-MIB8tTErbZMkdZicQ9FmLbJAJXy1",
-  "uid": "tWr8tTErbZMkdZicQ9FmLbJAJXy1"
+  "uid": "tWr8tTErbZMkdZicQ9FmLbJAJXy1",
+  "network": "true"
 }

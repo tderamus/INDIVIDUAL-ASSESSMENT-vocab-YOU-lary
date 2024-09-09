@@ -19,6 +19,8 @@ const showWords = (array) => {
         <h5 id="word" class="card-title">${item.word}</h5>
         <p id="definition" class="card-text">${item.definition}.</p>
         <p id="category" class="card-text">${item.category}.</p>
+        <p class="card-text bold">${item.network ? '<span class="badge badge-info sale-badge"><i class="fa fa-bell" aria-hidden="true"></i> Favorite</span>' : ''}</p>
+        <hr>
         <a id="edit-btn--${item.firebaseKey}" href="#" class="btn btn-primary">Edit</a>
         <a id="delete-btn--${item.firebaseKey}" href="#" class="btn btn-primary">Delete</a>
         </div>
