@@ -5,8 +5,8 @@ import client from '../utils/client';
 const endpoint = client.databaseURL;
 
 // GET WORDS FROM DATABASE
-const getWords = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/words.json?orderBy="uid"&equalTo"${uid}"`, {
+const getWords = (user) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/words.json?orderBy="uid"&equalTo"${user.uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -24,8 +24,7 @@ const getWords = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// ADD WORDS TO DATABASE
-export default getWords;
+// CREATE WORDS
 const createWord = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/words.json`, {
     method: 'POST',
@@ -41,7 +40,7 @@ const createWord = (payload) => new Promise((resolve, reject) => {
 
 // UPDATE WORDS
 const updateWord = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/words${payload.firebaseKey}.json`, {
+  fetch(`${endpoint}/words/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -53,4 +52,32 @@ const updateWord = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export { getWords, createWord, updateWord };
+// GET SINGLE WORD
+const getSingleWord = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/words/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+// DELETE WORDS
+const deletWords = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/words/${firebaseKey}.json`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+export {
+  getWords, createWord, updateWord, getSingleWord, deletWords
+};

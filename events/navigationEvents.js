@@ -1,4 +1,4 @@
-import getWords from '../api/wordData';
+import { getWords } from '../api/wordData';
 import { showWords } from '../pages/words';
 import { signOut } from '../utils/auth';
 

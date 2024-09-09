@@ -18,6 +18,7 @@ const showWords = (array) => {
         <div class="card-body">
         <h5 id="word" class="card-title">${item.word}</h5>
         <p id="definition" class="card-text">${item.definition}.</p>
+        <p id="category" class="card-text">${item.category}.</p>
         <a id="edit-btn--${item.firebaseKey}" href="#" class="btn btn-primary">Edit</a>
         <a id="delete-btn--${item.firebaseKey}" href="#" class="btn btn-primary">Delete</a>
         </div>
