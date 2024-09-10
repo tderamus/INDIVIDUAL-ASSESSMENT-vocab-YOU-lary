@@ -1,3 +1,4 @@
+import firebase from 'firebase';
 import client from '../utils/client';
 
 // API CALL FOR WORDS
@@ -5,8 +6,8 @@ import client from '../utils/client';
 const endpoint = client.databaseURL;
 
 // GET WORDS FROM DATABASE
-const getWords = (user) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/words.json?orderBy="uid"&equalTo"${user.uid}"`, {
+const getWords = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/words.json?orderBy="uid"&equalTo"${firebase.auth().currentUser.uid}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -79,8 +80,8 @@ const deletWords = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // FILTER NETWORK WORDS  /words.json?orderBy="category"&equalTo="network"
-const networkWords = (user) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/words.json?orderBy="uid"&equalTo="${user.uid}"`, {
+const networkWords = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/words.json?orderBy="uid"&equalTo="${firebase.auth().currentUser.uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -88,6 +89,7 @@ const networkWords = (user) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
+      console.warn(data);
       const network = Object.values(data).filter((item) => item.network);
       resolve(network);
       console.warn(network);
