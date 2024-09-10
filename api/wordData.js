@@ -90,6 +90,7 @@ const networkWords = (user) => new Promise((resolve, reject) => {
     .then((data) => {
       const network = Object.values(data).filter((item) => item.network);
       resolve(network);
+      console.warn(network);
     })
     .catch(reject);
 });

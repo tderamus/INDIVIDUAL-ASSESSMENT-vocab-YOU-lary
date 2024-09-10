@@ -19,10 +19,13 @@ const domEvents = (user) => {
 
     // EVENT FOR DELETING WORD CARD
     if (e.target.id.includes('delete-btn')) {
-      const [, firebaseKey] = e.target.id.split('--');
-      deletWords(firebaseKey).then(() => {
-        getWords(user.uid).then(showWords);
-      });
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Want to delete?')) {
+        const [, firebaseKey] = e.target.id.split('--');
+        deletWords(firebaseKey).then(() => {
+          getWords(user.uid).then(showWords);
+        });
+      }
     }
   });
 };

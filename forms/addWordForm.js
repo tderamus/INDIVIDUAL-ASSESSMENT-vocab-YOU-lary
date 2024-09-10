@@ -13,7 +13,7 @@ const addWordForm = (obj = {}) => {
     <div class="mb-3">
     <input type="text" class="form-control" id="category" placeholder="add category" value="${obj.category || ''}"></div>
     <div class="form-check">
-    </div><input type="checkbox" id="network" class="form-check-input" ${obj.network ? 'checked' : ''}>NETWORK
+    </div><input type="checkbox" id="network" class="form-check-input" ${obj.network ? 'checked' : ''}>
     </div>
     <button type="submit" class="btn btn-primary mt-3" id="submit-words">Submit Word</button>
   </form>`;
